@@ -96,20 +96,20 @@ export const questions = [
         placeholder: 'postal code',
         required: true
       },
-      {
-        label: 'Country',
-        type: 'text',
-        value: 'country',
-        placeholder: 'country',
-        required: true
-      }, 
-      {
-        label: 'Province/State',
-        type: 'text',
-        value: 'state',
-        placeholder: 'province/state',
-        required: true
-      }
+      // {
+      //   label: 'Country',
+      //   type: 'country',
+      //   value: 'country',
+      //   placeholder: 'country',
+      //   required: true
+      // }, 
+      // {
+      //   label: 'Province/State',
+      //   type: 'state',
+      //   value: 'state',
+      //   placeholder: 'province/state',
+      //   required: true
+      // }
     ]
   },
   {
