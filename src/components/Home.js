@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./home.css";
 import { Container, Carousel } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
+import { BsSearch } from "react-icons/bs";
 
 function Banner() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ function Banner() {
                 onClick={() => navigate(path)}
                 className="btn light fw-bold mt-4 shadow"
               >
+                <BsSearch className="mb-1"/> {' '}
                 Explore Artworks
               </button>
             </div>

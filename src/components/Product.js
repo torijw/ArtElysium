@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { productList } from "../data/data";
 import "./product.css";
 import { ReactSketchCanvas } from "react-sketch-canvas";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Canvas() {
   const canvasRef = useRef(null);
@@ -54,19 +55,19 @@ function Canvas() {
       <div className="d-flex gap-2 align-items-center">
         <button
           type="button"
-          className="btn btn-sm btn-outline-primary"
+          className="btn btn-sm light"
           disabled={!eraseMode}
           onClick={handlePenClick}
         >
-          Pen
+          <i className="bi bi-pencil-fill"></i>
         </button>
         <button
           type="button"
-          className="btn btn-sm btn-outline-primary"
+          className="btn btn-sm light"
           disabled={eraseMode}
           onClick={handleEraserClick}
         >
-          Eraser
+          <i className="bi bi-eraser-fill"></i>
         </button>
         <div>
           <label htmlFor="strokeWidth" className="form-label">
@@ -86,21 +87,21 @@ function Canvas() {
         <div className="vr" />
         <button
           type="button"
-          className="btn btn-sm btn-outline-primary"
+          className="btn btn-sm light"
           onClick={handleUndoClick}
         >
-          Undo
+          <i className="bi bi-arrow-90deg-left"></i> Undo
         </button>
         <button
           type="button"
-          className="btn btn-sm btn-outline-primary"
+          className="btn btn-sm light"
           onClick={handleRedoClick}
         >
-          Redo
+          Redo <i className="bi bi-arrow-90deg-right"></i>
         </button>
         <button
           type="button"
-          className="btn btn-sm btn-outline-primary"
+          className="btn btn-sm light"
           onClick={handleClearClick}
         >
           Clear
@@ -117,6 +118,7 @@ function Canvas() {
               .catch((err) => {
                 console.log(err);
               });
+            window.alert("Drawing saved");
           }}
         >
           Save

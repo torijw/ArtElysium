@@ -5,6 +5,7 @@ import ProductCard from "./search/Card";
 import { productList } from "../data/data";
 import { mediums, styles, formats } from "../data/filters";
 import { PaginationControl } from "react-bootstrap-pagination-control";
+import { BsSearch } from "react-icons/bs";
 
 function Title() {
   return (
@@ -121,13 +122,20 @@ function FacetedSearch() {
               <div className="card p-3 mb-3">
                 <Form>
                   <Form.Group>
-                    <Form.Control
-                      type="search"
-                      id="searchfield"
-                      placeholder="Search"
-                      onChange={search}
-                    />
-                  </Form.Group>
+                    <div className="row">
+                      <div className="col-auto mx-0 pe-0">
+                        <BsSearch className="mt-2"/> {' '}
+                      </div>
+                      <div className="col mx-0 px-2">
+                        <Form.Control
+                          type="search"
+                          id="searchfield"
+                          placeholder="Search"
+                          onChange={search}
+                        />
+                      </div>
+                    </div>
+                    </Form.Group>
                 </Form>
               </div>
               <h6 className="px-2 title">Filter results</h6>
