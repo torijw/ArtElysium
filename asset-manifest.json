@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/ArtElysium/static/css/main.730efe1c.css",
-    "main.js": "/ArtElysium/static/js/main.6670eedc.js",
+    "main.css": "/ArtElysium/static/css/main.525a1d11.css",
+    "main.js": "/ArtElysium/static/js/main.d20dfd7b.js",
     "static/media/home-3.jpg": "/ArtElysium/static/media/home-3.68eec86ae4c7e4660c81.jpg",
+    "static/media/TwemojiMozilla.ttf": "/ArtElysium/static/media/TwemojiMozilla.c993f93bd40b647e0b38.ttf",
     "static/media/background.png": "/ArtElysium/static/media/background.8132b80fa24971453ab3.png",
     "static/media/home-1.jpg": "/ArtElysium/static/media/home-1.b9072d88f9b2895a539c.jpg",
     "static/media/home-2.jpg": "/ArtElysium/static/media/home-2.5dfaeedb585ec2b36e0d.jpg",
+    "static/media/bootstrap-icons.woff?": "/ArtElysium/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/home-4.webp": "/ArtElysium/static/media/home-4.e28b7c284cd37cb741d6.webp",
+    "static/media/bootstrap-icons.woff2?": "/ArtElysium/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "static/media/about.webp": "/ArtElysium/static/media/about.dc6c528ab4b2c335b274.webp",
     "index.html": "/ArtElysium/index.html",
-    "main.730efe1c.css.map": "/ArtElysium/static/css/main.730efe1c.css.map",
-    "main.6670eedc.js.map": "/ArtElysium/static/js/main.6670eedc.js.map"
+    "main.525a1d11.css.map": "/ArtElysium/static/css/main.525a1d11.css.map",
+    "main.d20dfd7b.js.map": "/ArtElysium/static/js/main.d20dfd7b.js.map"
   },
   "entrypoints": [
-    "static/css/main.730efe1c.css",
-    "static/js/main.6670eedc.js"
+    "static/css/main.525a1d11.css",
+    "static/js/main.d20dfd7b.js"
   ]
 }
