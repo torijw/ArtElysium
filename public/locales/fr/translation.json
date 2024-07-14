@@ -1,0 +1,47 @@
+{
+  "common": {
+    "siteName": "Art Elysium",
+    "home": "D'Accueil",
+    "aboutUs": "À Propos de Nous",
+    "explore": "Explorer",
+    "faq": "FAQ",
+    "feedback": "Retour"
+  },
+  "home": {
+    "subtitle": "Découvrez l'art qui vous convient, personnalisé selon vos besoins",
+    "exploreBtn": "Explorer les œuvres d’art",
+    "subheadings": {
+      "examples": "Exemples de Nos Réalisations",
+      "reviews": "Commentaires Récents"
+    },
+    "reviews": {
+      "1": {
+        "heading": "Peinture Acrylique Abstraite",
+        "author": "Michael Moore",
+        "comment": "Nous avons décidé d'embellir notre salon avec une peinture abstraite personnalisée et nous ne pourrions être plus ravis du résultat. Il est arrivé rapidement et a été soigneusement emballé. Les couleurs et les formes correspondent exactement à ce que nous souhaitions."
+      },
+      "2": {
+        "heading": "Figure de Personnage Personnalisée",
+        "author": "Anonymous",
+        "comment": "Nous voulions égayer notre configuration de jeu, nous avons donc commandé en ligne un modèle de personnage 3D personnalisé. L'artiste l'a parfaitement compris dans les moindres détails : traits du visage, vêtements, accessoires. Le modèle a une apparence et une sensation incroyables, maintenant fièrement affiché sur notre bureau. C'est un véritable accroche-regard et les amis n'arrêtent pas de demander où se procurer le leur."
+      }, 
+      "3": {
+        "heading": "Illustration de Style Anime",
+        "author": "Cecil L.",
+        "comment": "Nous voulions apporter une touche d'anime à notre collection numérique, nous avons donc commandé une illustration personnalisée en ligne. L’artiste a réussi, mélangeant parfaitement nos idées avec leur style. Le fichier numérique est arrivé rapidement et a dépassé nos attentes."
+      }
+    },
+    "aboutUs": {
+      "description": "Bienvenue à Art Elysium! Notre plateforme vous permet de créer des œuvres d'art adaptées à votre vision. Avec une communauté diversifiée d’artistes talentueux, nous faisons en sorte que le processus permettant de donner vie à vos idées soit fluide et inspirant. Que vous créiez un cadeau unique, décoriez votre espace ou exploriez votre potentiel créatif, Art Elysium vous offre la toile et les moyens de faire de vos rêves artistiques une réalité. Rejoignez-nous pour célébrer la créativité et l'individualité, chaque œuvre d'art que nous créons est unique!",
+      "contactInfo": {
+        "heading": "Coordonnées",
+        "customerService": {
+          "name": "Service client",
+          "phone": "téléphone: 111-222-3333",
+          "email": "e-mail: info@artelysium.com",
+          "fax": "fax: 222-333-4444"
+        }
+      }
+    }
+  }
+}

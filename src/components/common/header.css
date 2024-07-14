@@ -19,3 +19,11 @@
 a.navbar-brand:hover {
     color: white;
 }
+
+#dropdown-menu {
+    background-color: var(--darker);
+}
+
+a.dropdown-item {
+    color: var(--darkblue);
+}
