@@ -3,16 +3,32 @@
     "siteName": "Art Elysium",
     "home": "D'Accueil",
     "aboutUs": "À Propos de Nous",
+    "design": "Désign",
     "explore": "Explorer",
+    "help": "Aide",
     "faq": "FAQ",
-    "feedback": "Retour"
+    "feedback": "Contactez-nous"
   },
   "home": {
     "subtitle": "Découvrez l'art qui vous convient, personnalisé selon vos besoins",
     "exploreBtn": "Explorer les œuvres d’art",
+    "designBtn": "Idées de Désign",
     "subheadings": {
       "examples": "Exemples de Nos Réalisations",
+      "getstarted": "Commencer",
       "reviews": "Commentaires Récents"
+    },
+    "entry": {
+      "explore": {
+        "title": "Explorez Nos Différentes Œuvres D'art",
+        "subtitle": "Pour les clients nouveaux ou occasionnels",
+        "content": "Nous proposons une grande variété de produits de base/art à découvrir. Nous fournissons également des exemples de résultats précédents de chaque produit."
+      },
+      "design": {
+        "title": "Illustrez Vos Propres Idées",
+        "subtitle": "Pour les clients fréquents et/ou créatifs",
+        "content": "Dessinez vos idées sur notre canevas en ligne et choisissez le produit de base de votre choix. Nous ferons de notre mieux pour concrétiser vos idées."
+      }
     },
     "reviews": {
       "1": {
