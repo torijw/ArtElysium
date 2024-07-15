@@ -9,6 +9,7 @@ import Footer from "./components/common/Footer";
 import Product from "./components/Product";
 import RequestForm from "./components/form/RequestForm";
 import FAQ from "./components/FAQ";
+import Design from "./components/Design";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/design" element={<Design />} />
             <Route path="/explore/:id" element={<Product />} />
             <Route path="/feedback" element={<Review />} />
             <Route path="/request" element={<RequestForm />} />

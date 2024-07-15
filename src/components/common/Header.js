@@ -49,20 +49,26 @@ function Header() {
               >
                 {t("common.explore")}
               </Nav.Link>
-              <Nav.Link className="mx-3" href={process.env.PUBLIC_URL + "/faq"}>
-                {t("common.faq")}
-              </Nav.Link>
               <Nav.Link
                 className="mx-3"
-                href={process.env.PUBLIC_URL + "/feedback"}
+                href={process.env.PUBLIC_URL + "/design"}
               >
-                {t("common.feedback")}
+                {t("common.design")}
               </Nav.Link>
+              <NavDropdown className="mx-3" align="end" title={t("common.help")}>
+                <NavDropdown.Item href={process.env.PUBLIC_URL + "/faq"}>
+                  {t("common.faq")}
+                </NavDropdown.Item>
+                <NavDropdown.Item href={process.env.PUBLIC_URL + "/feedback"}>
+                  {t("common.feedback")}
+                </NavDropdown.Item>
+              </NavDropdown>
               <NavDropdown
+                className="mx-3"
                 align="end"
                 title={
                   <>
-                    <i class="bi bi-globe2"></i> {i18n.language.toUpperCase()}
+                    <i className="bi bi-globe2"></i> {i18n.language.toUpperCase()}
                   </>
                 }
               >

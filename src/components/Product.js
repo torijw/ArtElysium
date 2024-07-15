@@ -1,157 +1,9 @@
-import React, { useRef, useState } from "react";
-import { Container, Carousel, Accordion } from "react-bootstrap";
+import React from "react";
+import { Container, Carousel } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import { productList } from "../data/data";
 import "./product.css";
-import { ReactSketchCanvas } from "react-sketch-canvas";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
-function Canvas() {
-  const canvasRef = useRef(null);
-  const [eraseMode, setEraseMode] = useState(false);
-  const [strokeWidth, setStrokeWidth] = useState(5);
-  const [eraserWidth, setEraserWidth] = useState(10);
-  const [strokeColor, setStrokeColor] = useState("#000000");
-  const [canvasColor, setCanvasColor] = useState("#ffffff");
-
-  const handleStrokeColorChange = (e) => {
-    setStrokeColor(e.target.value);
-  };
-
-  const handleCanvasColorChange = (e) => {
-    setCanvasColor(e.target.value);
-  };
-
-  const handleEraserClick = () => {
-    setEraseMode(true);
-    canvasRef.current?.eraseMode(true);
-  };
-
-  const handlePenClick = () => {
-    setEraseMode(false);
-    canvasRef.current?.eraseMode(false);
-  };
-
-  const handleUndoClick = () => {
-    canvasRef.current?.undo();
-  };
-
-  const handleRedoClick = () => {
-    canvasRef.current?.redo();
-  };
-
-  const handleClearClick = () => {
-    canvasRef.current?.clearCanvas();
-  };
-
-  const handleStrokeWidthChange = (e) => {
-    setStrokeWidth(e.target.value);
-    setEraserWidth(e.target.value);
-  };
-
-  return (
-    <div className="d-flex flex-column gap-2 p-2" id="canvas">
-      <h5>Tools</h5>
-      <div className="d-flex gap-2 align-items-center">
-        <button
-          type="button"
-          className="btn btn-sm light"
-          disabled={!eraseMode}
-          onClick={handlePenClick}
-        >
-          <i className="bi bi-pencil-fill"></i>
-        </button>
-        <button
-          type="button"
-          className="btn btn-sm light"
-          disabled={eraseMode}
-          onClick={handleEraserClick}
-        >
-          <i className="bi bi-eraser-fill"></i>
-        </button>
-        <div>
-          <label htmlFor="strokeWidth" className="form-label">
-            Stroke width
-          </label>
-          <input
-            type="range"
-            className="form-range"
-            min="1"
-            max="30"
-            step="1"
-            id="strokeWidth"
-            value={strokeWidth}
-            onChange={handleStrokeWidthChange}
-          />
-        </div>
-        <div className="vr" />
-        <button
-          type="button"
-          className="btn btn-sm light"
-          onClick={handleUndoClick}
-        >
-          <i className="bi bi-arrow-90deg-left"></i> Undo
-        </button>
-        <button
-          type="button"
-          className="btn btn-sm light"
-          onClick={handleRedoClick}
-        >
-          Redo <i className="bi bi-arrow-90deg-right"></i>
-        </button>
-        <button
-          type="button"
-          className="btn btn-sm light"
-          onClick={handleClearClick}
-        >
-          Clear
-        </button>
-        <button
-          type="button"
-          className="btn btn-sm"
-          onClick={() => {
-            canvasRef.current
-              .exportImage("png")
-              .then((data) => {
-                sessionStorage.setItem("canvas", data);
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-            window.alert("Drawing saved");
-          }}
-        >
-          Save
-        </button>
-      </div>
-      <div className="d-flex gap-2 align-items-center">
-        <label htmlFor="color">Stroke color</label>
-        <input
-          type="color"
-          value={strokeColor}
-          onChange={handleStrokeColorChange}
-        />
-        <label htmlFor="color">Canvas color</label>
-        <input
-          type="color"
-          value={canvasColor}
-          onChange={handleCanvasColorChange}
-        />
-      </div>
-      <hr></hr>
-      <h5>Canvas</h5>
-      <ReactSketchCanvas
-        width="800px"
-        height="500px"
-        ref={canvasRef}
-        strokeWidth={strokeWidth}
-        eraserWidth={eraserWidth}
-        strokeColor={strokeColor}
-        canvasColor={canvasColor}
-      />
-    </div>
-  );
-}
 
 function Product() {
   const navigate = useNavigate();
@@ -210,30 +62,17 @@ function Product() {
             <div className="text-center">
               <button
                 className="btn dark"
-                onClick={() => navigate(requestPath)}
+                onClick={() =>
+                  navigate(requestPath, {
+                    state: { prevUrl: `/explore/${id}` },
+                  })
+                }
               >
                 Request Now
               </button>
             </div>
           </div>
         </section>
-      </Container>
-      <Container fluid className="mb-5">
-        <h4 style={{ color: "#424C7F", fontWeight: "bold" }}>
-          Feeling Creative?
-        </h4>
-        <p>
-          Draw your thoughts and we'll do our best to match your vision. When
-          you're done, save the canvas and then 'request now' above
-        </p>
-        <Accordion>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Drawing Canvas</Accordion.Header>
-            <Accordion.Body className="d-flex justify-content-center mb-4">
-              <Canvas />
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
       </Container>
     </section>
   );

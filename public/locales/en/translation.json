@@ -3,16 +3,32 @@
     "siteName": "Art Elysium",
     "home": "Home",
     "aboutUs": "About Us",
+    "design": "Design",
     "explore": "Explore",
+    "help": "Help",
     "faq": "FAQ",
-    "feedback": "Feedback"
+    "feedback": "Contact Us"
   },
   "home": {
     "subtitle": "Discover art that's just right for you, customized to your needs",
     "exploreBtn": "Explore Artworks",
+    "designBtn": "Design Ideas",
     "subheadings": {
       "examples": "Examples of Our Works",
+      "getstarted": "Getting Started",
       "reviews": "Recent Reviews"
+    }, 
+    "entry": {
+      "explore": {
+        "title": "Explore Our Various Artworks",
+        "subtitle": "For new or casual clients",
+        "content": "We provide a wide variety of base products/art for you to discover. We also provide examples of previous results of each product."
+      },
+      "design": {
+        "title": "Illustrate Your Own Ideas",
+        "subtitle": "For frequent and/or fellow creative clients",
+        "content": "Draw your ideas on our online canvas and choose the base product of your choice. We will do our best to make your ideas a reality."
+      }
     },
     "reviews": {
       "1": {

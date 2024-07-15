@@ -1,14 +1,14 @@
 import React from "react";
 import "./footer.css";
 import { Container } from "react-bootstrap";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function Footer() {
   const { t } = useTranslation();
 
   return (
     <footer>
-      <Container className="border-top">  
+      <Container className="border-top">
         <div className="d-flex justify-content-center py-4">
           <a href={process.env.PUBLIC_URL + "/"} className="mx-4">
             {t("common.home")}
@@ -17,7 +17,10 @@ function Footer() {
             {t("common.aboutUs")}
           </a>
           <a href={process.env.PUBLIC_URL + "/explore"} className="mx-4">
-            {t("common.explore")}  
+            {t("common.explore")}
+          </a>
+          <a href={process.env.PUBLIC_URL + "/design"} className="mx-4">
+            {t("common.design")}
           </a>
           <a href={process.env.PUBLIC_URL + "/faq"} className="mx-4">
             {t("common.faq")}
