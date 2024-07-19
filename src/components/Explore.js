@@ -132,6 +132,7 @@ function FacetedSearch() {
                           id="searchfield"
                           placeholder="Search"
                           onChange={search}
+                          aria-label="Search"
                         />
                       </div>
                     </div>

@@ -15,7 +15,7 @@ function Banner() {
         <div className="text-center" id="box">
           <h1>{t("common.siteName")}</h1>
           <p className="mb-4">{t("home.subtitle")}</p>
-          <a href="#about" className="btn light fw-bold mt-4 shadow">
+          <a href="#about" className="btn light fw-bold mt-4 shadow" aria-label="about us">
             {t("common.aboutUs")}
           </a>
         </div>
@@ -31,7 +31,7 @@ function GetStarted() {
   return (
     <section className="mt-5">
       <Container fluid id="getstarted">
-        <h3 className="mb-3">{t("home.subheadings.getstarted")}</h3>
+        <h3 className="mb-3"><bold>{t("home.subheadings.getstarted")}</bold></h3>
         <div className="row row-cols-1 row-cols-md-2 g-4">
           <div className="col-sm">
             <div className="card h-100 shadow-sm">
@@ -45,6 +45,7 @@ function GetStarted() {
                   <button
                     onClick={() => navigate("/explore")}
                     className="btn dark mt-3"
+                    aria-label="explore products"
                   >
                     <BsSearch className="mb-1" /> {t("home.exploreBtn")}
                   </button>
@@ -64,6 +65,7 @@ function GetStarted() {
                   <button
                     onClick={() => navigate("/design")}
                     className="btn dark mt-3"
+                    aria-label="design ideas"
                   >
                     <MdDraw className="mb-1" /> {t("home.designBtn")}
                   </button>
@@ -81,35 +83,35 @@ function Portfolio() {
   const { t } = useTranslation();
 
   return (
-    <section className="mt-5">
-      <h3 className="text-center">{t("home.subheadings.examples")}</h3>
+    <section className="mt-5" aria-label="portfolio">
+      <h3 className="text-center"><bold>{t("home.subheadings.examples")}</bold></h3>
       <Carousel className="mt-4 portfolio">
         <Carousel.Item interval={5000}>
           <img
             src={require("../images/examples/home-1.jpg")}
             className="d-block w-100"
-            alt="..."
+            alt="first image: acrylic painting of seagulls at the beach on canvas"
           />
         </Carousel.Item>
         <Carousel.Item interval={5000}>
           <img
             src={require("../images/examples/home-2.jpg")}
             className="d-block w-100"
-            alt="..."
+            alt="second image: abstract-like acrylic painting of crows on wires"
           />
         </Carousel.Item>
         <Carousel.Item interval={5000}>
           <img
             src={require("../images/examples/home-3.jpg")}
             className="d-block w-100"
-            alt="..."
+            alt="third image: digital illustration of anime girl with butterflies and flowers"
           />
         </Carousel.Item>
         <Carousel.Item interval={5000}>
           <img
             src={require("../images/examples/home-4.webp")}
             className="d-block w-100"
-            alt="..."
+            alt="fourth image: abstract acrylic painting of blue and purple shapes"
           />
         </Carousel.Item>
       </Carousel>
@@ -123,7 +125,7 @@ function Reviews() {
   return (
     <section className="my-5">
       <Container fluid id="reviews" className="my-5">
-        <h3 className="my-3">{t("home.subheadings.reviews")}</h3>
+        <h3 className="my-3"><bold>{t("home.subheadings.reviews")}</bold></h3>
         <div className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col-sm">
             <div className="card h-100 shadow-sm">
@@ -170,11 +172,11 @@ function About() {
   return (
     <section className="my-5">
       <Container fluid id="about">
-        <h3>{t("common.aboutUs")}</h3>
+        <h3><bold>{t("common.aboutUs")}</bold></h3>
         <div className="d-flex flex-row mt-4">
-          <div className="p-2 left-image" />
+          <div role="img" aria-label="Flower painting on wall of living room" className="p-2 left-image" />
           <div className="p-2 right-section">
-            <p>{t("home.aboutUs.description")}</p>
+            <section>{t("home.aboutUs.description")}</section>
             <br />
             <br />
             <Container fluid className="p-0" id="contacts">

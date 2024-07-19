@@ -19,7 +19,7 @@ function Header() {
     <header className="sticky-top">
       <Navbar expand="lg" variant="dark">
         <Container fluid>
-          <Navbar.Brand className="mx-3" href={process.env.PUBLIC_URL + "/"}>
+          <Navbar.Brand className="mx-3" href={process.env.PUBLIC_URL + "/"} aria-label="go to home page">
             {/* <img
                 alt=""
                 src="./logo512.png"
@@ -30,36 +30,55 @@ function Header() {
             {t("common.siteName")}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
-          <Navbar.Collapse id="navbar">
+          <Navbar.Collapse id="navbar" role="navigation">
             <Nav className="ms-auto">
               {" "}
               {/*m-auto for center align*/}
-              <Nav.Link className="mx-3" href={process.env.PUBLIC_URL + "/"}>
+              <Nav.Link
+                className="mx-3"
+                href={process.env.PUBLIC_URL + "/"}
+                aria-label="go to home page"
+              >
                 {t("common.home")}
               </Nav.Link>
               <Nav.Link
                 className="mx-3"
                 href={process.env.PUBLIC_URL + "/#about"}
+                aria-label="go to about us"
               >
                 {t("common.aboutUs")}
               </Nav.Link>
               <Nav.Link
                 className="mx-3"
                 href={process.env.PUBLIC_URL + "/explore"}
+                aria-label="go to explore page"
               >
                 {t("common.explore")}
               </Nav.Link>
               <Nav.Link
                 className="mx-3"
                 href={process.env.PUBLIC_URL + "/design"}
+                aria-label="go to design page"
               >
                 {t("common.design")}
               </Nav.Link>
-              <NavDropdown className="mx-3" align="end" title={t("common.help")}>
-                <NavDropdown.Item href={process.env.PUBLIC_URL + "/faq"}>
+              <NavDropdown
+                className="mx-3"
+                align="end"
+                title={t("common.help")}
+                role="listbox"
+                aria-label="Help dropdown"
+              >
+                <NavDropdown.Item
+                  href={process.env.PUBLIC_URL + "/faq"}
+                  aria-label="go to FAQ page"
+                >
                   {t("common.faq")}
                 </NavDropdown.Item>
-                <NavDropdown.Item href={process.env.PUBLIC_URL + "/feedback"}>
+                <NavDropdown.Item
+                  href={process.env.PUBLIC_URL + "/feedback"}
+                  aria-label="go to feedback and contact page"
+                >
                   {t("common.feedback")}
                 </NavDropdown.Item>
               </NavDropdown>
@@ -68,9 +87,12 @@ function Header() {
                 align="end"
                 title={
                   <>
-                    <i className="bi bi-globe2"></i> {i18n.language.toUpperCase()}
+                    <i className="bi bi-globe2"></i>{" "}
+                    {i18n.language.toUpperCase()}
                   </>
                 }
+                aria-label="Language Selector"
+                role="listbox"
               >
                 {Object.keys(locales).map((locale) => (
                   <NavDropdown.Item
@@ -78,6 +100,7 @@ function Header() {
                     onClick={() => {
                       i18n.changeLanguage(locale);
                     }}
+                    aria-label={`change language to ${locales[locale].title}`}
                   >
                     {locales[locale].title}
                   </NavDropdown.Item>
