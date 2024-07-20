@@ -25,6 +25,7 @@ function FormItem({ item, onChange, answer}) {
               pattern={item.pattern}
               required
               title={'Example: ' + item.example}
+              autoComplete="on"
             />
           </div>
         )
@@ -40,6 +41,7 @@ function FormItem({ item, onChange, answer}) {
               value={currentValue}
               placeholder={item.placeholder}
               required
+              autoComplete="on"
             />
           </div>
         )
@@ -53,6 +55,7 @@ function FormItem({ item, onChange, answer}) {
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
             placeholder={item.placeholder}
+            autoComplete="on"
           />
         </div>
       )
@@ -67,6 +70,7 @@ function FormItem({ item, onChange, answer}) {
             value={currentValue}
             placeholder={item.placeholder}
             required
+            autoComplete="on"
           />
         </div>
       )
@@ -83,6 +87,7 @@ function FormItem({ item, onChange, answer}) {
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             required
             title="Example: 111-222-3333" 
+            autoComplete="on"
           />
         </div>
       )
@@ -97,6 +102,7 @@ function FormItem({ item, onChange, answer}) {
             value={currentValue}
             placeholder={item.placeholder}
             required
+            autoComplete="on"
           />
         </div>
       )
@@ -113,6 +119,7 @@ function FormItem({ item, onChange, answer}) {
             pattern="^(?:0[1-9]|1[0-2])\/(\d{2})$"
             title="mm/yy"
             required
+            autoComplete="on"
           />
         </div>
       )
