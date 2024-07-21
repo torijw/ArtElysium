@@ -77,7 +77,7 @@ function PersonalInfo({ updateAnswers, stepAnswers }) {
         </Form.Select>
       </div>
       <div className="form-item">
-        <Form.Label>State</Form.Label>
+        <Form.Label>State/Province</Form.Label>
         <Form.Select
           aria-label="state-select"
           onChange={(e) => {

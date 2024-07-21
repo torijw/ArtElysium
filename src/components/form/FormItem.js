@@ -40,7 +40,7 @@ function FormItem({ item, onChange, answer }) {
               onChange={(e) => handleChange(e.target.value, item.value)}
               value={currentValue}
               placeholder={item.placeholder}
-              required
+              required={item.required}
               autoComplete={item.autocomplete}
               name={item.autocomplete}
             />
