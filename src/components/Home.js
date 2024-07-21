@@ -15,7 +15,11 @@ function Banner() {
         <div className="text-center" id="box">
           <h1>{t("common.siteName")}</h1>
           <p className="mb-4">{t("home.subtitle")}</p>
-          <a href="#about" className="btn light fw-bold mt-4 shadow" aria-label="about us">
+          <a
+            href="#about"
+            className="btn light fw-bold mt-4 shadow"
+            aria-label="about us"
+          >
             {t("common.aboutUs")}
           </a>
         </div>
@@ -31,7 +35,9 @@ function GetStarted() {
   return (
     <section className="mt-5">
       <Container fluid id="getstarted">
-        <h3 className="mb-3"><bold>{t("home.subheadings.getstarted")}</bold></h3>
+        <h3 className="mb-3">
+          <bold>{t("home.subheadings.getstarted")}</bold>
+        </h3>
         <div className="row row-cols-1 row-cols-md-2 g-4">
           <div className="col-sm">
             <div className="card h-100 shadow-sm">
@@ -84,7 +90,9 @@ function Portfolio() {
 
   return (
     <section className="mt-5" aria-label="portfolio">
-      <h3 className="text-center"><bold>{t("home.subheadings.examples")}</bold></h3>
+      <h3 className="text-center">
+        <bold>{t("home.subheadings.examples")}</bold>
+      </h3>
       <Carousel className="mt-4 portfolio">
         <Carousel.Item interval={5000}>
           <img
@@ -125,7 +133,9 @@ function Reviews() {
   return (
     <section className="my-5">
       <Container fluid id="reviews" className="my-5">
-        <h3 className="my-3"><bold>{t("home.subheadings.reviews")}</bold></h3>
+        <h3 className="my-3">
+          <bold>{t("home.subheadings.reviews")}</bold>
+        </h3>
         <div className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col-sm">
             <div className="card h-100 shadow-sm">
@@ -172,9 +182,15 @@ function About() {
   return (
     <section className="my-5">
       <Container fluid id="about">
-        <h3><bold>{t("common.aboutUs")}</bold></h3>
+        <h3>
+          <bold>{t("common.aboutUs")}</bold>
+        </h3>
         <div className="d-flex flex-row mt-4">
-          <div role="img" aria-label="Flower painting on wall of living room" className="p-2 left-image" />
+          <div
+            role="img"
+            aria-label="Flower painting on wall of living room"
+            className="p-2 left-image"
+          />
           <div className="p-2 right-section">
             <section>{t("home.aboutUs.description")}</section>
             <br />
@@ -187,9 +203,11 @@ function About() {
                     <span className="text-muted">
                       {t("home.aboutUs.contactInfo.customerService.name")}
                     </span>
-                    <br /> 75 Laurier Ave E
-                    <br /> Ottawa, ON Canada
-                    <br /> K1N 6N5
+                    <address>
+                      <br /> 75 Laurier Ave E
+                      <br /> Ottawa, ON Canada
+                      <br /> K1N 6N5
+                    </address>
                   </p>
                 </div>
                 <div className="p-2 left">

@@ -1,34 +1,51 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import './forms.css';
+import "./forms.css";
 
-function FormItem({ item, onChange, answer}) {
+function FormItem({ item, onChange, answer }) {
   const [currentValue, setCurrentValue] = useState(answer || "");
 
   const handleChange = (value) => {
     setCurrentValue(value);
     onChange(value, item.value);
-  }
+  };
 
   switch (item.type) {
-    case 'text':
+    case "text":
       if (item.pattern != null) {
         return (
           <div className="form-item">
             <Form.Label>{item.label}</Form.Label>
             <Form.Control
               type="text"
-              id={item.label}
+              id={item.value}
               onChange={(e) => handleChange(e.target.value, item.value)}
               value={currentValue}
               placeholder={item.placeholder}
               pattern={item.pattern}
               required
-              title={'Example: ' + item.example}
+              title={"Example: " + item.example}
               autoComplete="on"
             />
           </div>
-        )
+        );
+      }
+      if (item.autocomplete != null) {
+        return (
+          <div className="form-item">
+            <Form.Label>{item.label}</Form.Label>
+            <Form.Control
+              type="text"
+              id={item.autocomplete}
+              onChange={(e) => handleChange(e.target.value, item.value)}
+              value={currentValue}
+              placeholder={item.placeholder}
+              required
+              autoComplete={item.autocomplete}
+              name={item.autocomplete}
+            />
+          </div>
+        );
       }
       if (item.required) {
         return (
@@ -36,7 +53,7 @@ function FormItem({ item, onChange, answer}) {
             <Form.Label>{item.label}</Form.Label>
             <Form.Control
               type="text"
-              id={item.label}
+              id={item.value}
               onChange={(e) => handleChange(e.target.value, item.value)}
               value={currentValue}
               placeholder={item.placeholder}
@@ -44,28 +61,28 @@ function FormItem({ item, onChange, answer}) {
               autoComplete="on"
             />
           </div>
-        )
+        );
       }
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
           <Form.Control
             type="text"
-            id={item.label}
+            id={item.value}
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
             placeholder={item.placeholder}
             autoComplete="on"
           />
         </div>
-      )
-    case 'email':
+      );
+    case "email":
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
           <Form.Control
             type="email"
-            id={item.label}
+            id={item.value}
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
             placeholder={item.placeholder}
@@ -73,46 +90,46 @@ function FormItem({ item, onChange, answer}) {
             autoComplete="on"
           />
         </div>
-      )
-    case 'tel':
+      );
+    case "tel":
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
           <Form.Control
             type="tel"
-            id={item.label}
+            id={item.value}
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
             placeholder={item.placeholder}
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             required
-            title="Example: 111-222-3333" 
+            title="Example: 111-222-3333"
             autoComplete="on"
           />
         </div>
-      )
-    case 'number':
+      );
+    case "number":
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
           <Form.Control
             type="number"
-            id={item.label}
+            id={item.value}
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
             placeholder={item.placeholder}
             required
-            autoComplete="on"
+            autoComplete={item.value}
           />
         </div>
-      )
-    case 'month-year':
+      );
+    case "month-year":
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
           <Form.Control
             type="text"
-            id={item.label}
+            id={item.value}
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
             placeholder={item.placeholder}
@@ -122,14 +139,14 @@ function FormItem({ item, onChange, answer}) {
             autoComplete="on"
           />
         </div>
-      )
-    case 'textarea':
+      );
+    case "textarea":
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
           <p className="text-muted">{item.subtitle}</p>
-          <Form.Control 
-            as="textarea" 
+          <Form.Control
+            as="textarea"
             rows={6}
             onChange={(e) => handleChange(e.target.value, item.value)}
             value={currentValue}
@@ -137,43 +154,46 @@ function FormItem({ item, onChange, answer}) {
             required
           />
         </div>
-      )
-    case 'select':
+      );
+    case "select":
       return (
         <div className="form-item">
           <Form.Label>{item.label}</Form.Label>
-          <Form.Select aria-label={item.label} onChange={(e) => handleChange(e.target.value, item.value)} defaultValue={answer}>
-            {
-              item.options.map((opt, index) => {
-                return (
-                  <option value={opt}>{opt}</option>
-                )
-              })
-            }
+          <Form.Select
+            aria-label={item.label}
+            onChange={(e) => handleChange(e.target.value, item.value)}
+            defaultValue={answer}
+          >
+            {item.options.map((opt, index) => {
+              return <option value={opt}>{opt}</option>;
+            })}
           </Form.Select>
         </div>
-      )
-    case 'file':
+      );
+    case "file":
       return (
         <div className="form-item">
-          <input type="file" onChange={(e) => handleChange(e.target.value, item.value)}></input>
-          <p>Chosen file: {currentValue.split('\\').pop().split('/').pop()}</p>
+          <input
+            type="file"
+            onChange={(e) => handleChange(e.target.value, item.value)}
+          ></input>
+          <p>Chosen file: {currentValue.split("\\").pop().split("/").pop()}</p>
         </div>
-      )
-    case 'space':
-      return(
-        <div>
-          <p style={{color: 'white'}}>.</p>
-        </div>
-      )
-    case 'subtitle':
+      );
+    case "space":
       return (
-        <h5 className="fw-bold" style={{flexBasis: '100%', padding: '5px'}}>
+        <div>
+          <p style={{ color: "white" }}>.</p>
+        </div>
+      );
+    case "subtitle":
+      return (
+        <h5 className="fw-bold" style={{ flexBasis: "100%", padding: "5px" }}>
           {item.label}
         </h5>
-      )
+      );
     default:
-      return(<></>)
+      return <></>;
   }
 }
 

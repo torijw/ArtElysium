@@ -71,15 +71,17 @@ export const questions = [
       {
         label: 'Street Line',
         type: 'text',
-        value: 'street',
+        value: 'address-line1',
         placeholder: 'street number & name',
+        autocomplete: 'address-line1',
         required: true
       },
       {
         label: 'Unit Number, if applicable',
         type: 'text',
-        value: 'unit',
+        value: 'address-line2',
         placeholder: 'unit',
+        autocomplete: 'address-line2',
         required: false
       }, 
       {
@@ -92,24 +94,11 @@ export const questions = [
       {
         label: 'Postal Code',
         type: 'text',
-        value: 'postcode',
+        value: 'postal-code',
         placeholder: 'postal code',
+        autocomplete: 'postal-code',
         required: true
       },
-      // {
-      //   label: 'Country',
-      //   type: 'country',
-      //   value: 'country',
-      //   placeholder: 'country',
-      //   required: true
-      // }, 
-      // {
-      //   label: 'Province/State',
-      //   type: 'state',
-      //   value: 'state',
-      //   placeholder: 'province/state',
-      //   required: true
-      // }
     ]
   },
   {
@@ -118,7 +107,7 @@ export const questions = [
       {
         label: 'Name',
         type: 'text',
-        value: 'cardname',
+        value: 'name',
         placeholder: 'Name of Cardholder',
         required: true
       },
