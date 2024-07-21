@@ -1,14 +1,17 @@
 import React from "react";
 import { Container, Form, Button, Modal } from "react-bootstrap";
 import "./review.css";
+import { useTranslation } from "react-i18next";
 
 function Banner() {
+  const { t } = useTranslation();
+
   return (
     <section id="background-md">
       <Container fluid className="p-0">
         <div className="text-center" id="box-md">
-          <h2 className="fw-bold">Contact Us or Leave a Review</h2>
-          <p>Have any concerns? We are happy to help</p>
+          <h2 className="fw-bold">{t("review.title")}</h2>
+          <p>{t("review.subtitle")}</p>
         </div>
       </Container>
     </section>
@@ -17,7 +20,8 @@ function Banner() {
 
 function ReviewForm() {
   const [open, setOpen] = React.useState(false);
- 
+  const { t } = useTranslation();
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -29,41 +33,48 @@ function ReviewForm() {
 
   return (
     <section id="review-form" className="my-5">
-      <Form id="review" onSubmit={e => handleOpen(e)}>
+      <Form id="review" onSubmit={(e) => handleOpen(e)}>
         <Form.Group className="mb-3" controlId="commission-type">
-          <Form.Label>Commission/product</Form.Label>
+          <Form.Label>{t("review.form.commission.label")}</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter the product/commission of concern"
-            required />
+            placeholder={t("review.form.commission.placeholder")}
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>{t("review.form.name.label")}</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter your name (anonymous if blank)"
+            placeholder={t("review.form.name.placeholder")}
+            autoComplete="on"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter your email" required/>
+          <Form.Label>{t("review.form.email.label")}</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder={t("review.form.email.placeholder")}
+            autoComplete="on"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="review-comments">
-          <Form.Label>Comments</Form.Label>
-          <Form.Control as="textarea" rows={4} required/>
+          <Form.Label>{t("review.form.comments.label")}</Form.Label>
+          <Form.Control as="textarea" rows={4} required />
         </Form.Group>
         <div className="text-center">
           <button className="btn dark" type="submit">
-            Submit
+            {t("review.form.submitBtn")}
           </button>
         </div>
       </Form>
 
       <Modal show={open} onHide={handleClose}>
-        <Modal.Body>Thank you for submitting a review!</Modal.Body>
+        <Modal.Body>{t("review.modal.body")}</Modal.Body>
         <Modal.Footer>
           <Button className="dark" onClick={handleClose}>
-            Close
+            {t("review.modal.btn")}
           </Button>
         </Modal.Footer>
       </Modal>

@@ -59,5 +59,39 @@
         }
       }
     }
+  }, 
+  "faq": {
+    "title": "Frequently Asked Questions (FAQ)",
+    "subtitle": {
+      "first": "Need help? We might have the answer for you here or",
+      "contact": "contact us",
+      "last": "for specific questions."
+    }
+  },
+  "review": {
+    "title": "Contact Us or Leave a Review",
+    "subtitle": "Have any concerns? We are happy to help",
+    "form": {
+      "commission": {
+        "label": "Commission/product",
+        "placeholder": "Enter the product/commission of concern"
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name (anonymous if blank)"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "Enter your email"
+      },
+      "comments": {
+        "label": "Comments/Concerns"
+      },
+      "submitBtn": "Submit"
+    },
+    "modal": {
+      "body": "Thank you for submitting a review!",
+      "btn": "Close"
+    }
   }
 }

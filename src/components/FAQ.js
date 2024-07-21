@@ -1,23 +1,26 @@
 import React from "react";
 import { Accordion, AccordionBody, Container } from "react-bootstrap";
-import { faqs } from "../data/faq";
+import { faqs, faqsFR } from "../data/faq";
 import "./faq.css";
+import { useTranslation } from "react-i18next";
 
 function Title() {
+  const { t } = useTranslation();
+
   return (
     <section id="explore-title">
       <Container fluid className="p-0 mt-5">
         <div className="text-center">
-          <h2 className="fw-bold">Frequently Asked Questions (FAQ)</h2>
+          <h2 className="fw-bold">{t("faq.title")}</h2>
           <p>
-            Need help? We might have the answer for you here or{" "}
+            {t("faq.subtitle.first")}{" "}
             <a
               href={process.env.PUBLIC_URL + "/feedback"}
               style={{ textDecoration: "underline" }}
             >
-              contact us
+              {t("faq.subtitle.contact")}
             </a>{" "}
-            for specific questions.
+            {t("faq.subtitle.last")}
           </p>
         </div>
       </Container>
@@ -26,11 +29,14 @@ function Title() {
 }
 
 function Help() {
+  const { i18n } = useTranslation();
+  const faqList = i18n.language.toLowerCase() === "en" ? faqs : faqsFR;
+
   return (
     <section style={{ margin: "auto", maxWidth: "1200px" }} className="my-5">
       <Container fluid className="p-0">
         <Accordion defaultActiveKey={[]} alwaysOpen>
-          {faqs.map((item, index) => (
+          {faqList.map((item, index) => (
             <Accordion.Item eventKey={index} key={index}>
               <Accordion.Header>{item.question}</Accordion.Header>
               <AccordionBody>{item.answer}</AccordionBody>

@@ -59,5 +59,39 @@
         }
       }
     }
+  }, 
+  "faq": {
+    "title": "Foire aux questions (FAQ)",
+    "subtitle": {
+      "first": "Besoin d'aide ? Nous avons peut-être la réponse pour vous ici ou",
+      "contact": "contactez-nous",
+      "last": "pour des questions spécifiques."
+    }
+  },
+  "review": {
+    "title": "Contactez-nous ou laissez un avis",
+    "subtitle": "Vous avez des inquiétudes ? Nous serons heureux de vous aider",
+    "form": {
+      "commission": {
+        "label": "Commission/produit",    
+        "placeholder": "Entrez le produit/la commission qui vous préoccupe"
+      },
+      "name": {
+        "label": "Nom",
+        "placeholder": "Entrez votre nom (anonyme si vide)"
+      },
+      "email": {
+        "label": "Adresse email",
+        "placeholder": "Entrez votre email"
+      },
+      "comments": {
+        "label": "Commentaires/Préoccupations"
+      },
+      "submitBtn": "Soumettre"
+    },
+    "modal": {
+      "body": "Merci d'avoir soumis un avis !",
+      "btn": "Fermer"
+    }
   }
 }

@@ -201,13 +201,15 @@ function Design() {
               <button
                 className="btn dark"
                 style={{ minWidth: "fit-content" }}
-                onClick={() => {
+                onClick={(e) => {
                   if (
                     window.confirm(
                       "Request now? If you leave this page, your drawing will not be saved here so make sure this is the final version."
                     )
                   ) {
                     navigate(requestPath, { state: { prevUrl: "/design" } });
+                  } else {
+                    e.preventDefault();
                   }
                 }}
               >
